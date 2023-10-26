@@ -1,9 +1,15 @@
 import { useState } from "react";
 import "./form.css";
+import { Item } from "../../interface/item";
 
 export default function Form() {
+  const [items, setItems] = useState<Item[]>([]);
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState(1);
+
+  function onNewItem(item: Item) {
+    setItems(items => [...items, item])
+  }
 
   function onSubmit(e: any) {
     e.preventDefault();
@@ -12,7 +18,11 @@ export default function Form() {
       return;
     }
 
-    setItemName(() => '');
+    const newItem = { quantity, name: itemName, packed: false, id: Date.now() };
+
+    onNewItem(newItem);
+
+    setItemName(() => "");
     setQuantity(() => 1);
   }
 
