@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./item.css";
 
-export default function Item({ item }: any) {
+export default function CurrentItem({ item }: any) {
   const [checked, useChecked] = useState(item.packed);
 
     function onChecked () {

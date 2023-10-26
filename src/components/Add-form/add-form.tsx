@@ -2,14 +2,9 @@ import { useState } from "react";
 import "./form.css";
 import { Item } from "../../interface/item";
 
-export default function Form() {
-  const [items, setItems] = useState<Item[]>([]);
+export default function Form({ onNewItem }: { onNewItem: (newItem: Item) => void }) {
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState(1);
-
-  function onNewItem(item: Item) {
-    setItems(items => [...items, item])
-  }
 
   function onSubmit(e: any) {
     e.preventDefault();
