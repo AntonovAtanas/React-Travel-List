@@ -12,7 +12,7 @@ const mockList = [
   {
     quantity: 4,
     name: "Socks",
-    packed: false,
+    packed: true,
     id: 2,
   },
   {
@@ -30,7 +30,7 @@ const mockList = [
   {
     quantity: 7,
     name: "Laptop",
-    packed: false,
+    packed: true,
     id: 5,
   },
 ];
