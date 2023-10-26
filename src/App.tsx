@@ -14,11 +14,15 @@ function App() {
     setItems(items => [...items, item])
   }
 
+  function onDelete(id: number): void {
+    setItems(items => items.filter(item => item.id !== id));
+  }
+
   return (
     <div className="app">
       <Header />
       <Form onNewItem={onNewItem}/>
-      <ItemsList items={items}/>
+      <ItemsList items={items} onDelete={onDelete}/>
       <Footer />
     </div>
   )

@@ -2,12 +2,12 @@ import { Item } from "../../interface/item";
 import CurrentItem from "../Item/Item";
 import "./itemsList.css";
 
-export default function ItemsList({ items }: {items: Item[]}) {
+export default function ItemsList(props: any) {
   return (
     <div className="list">
       <ul>
-        {items.map((item) => (
-          <CurrentItem item={item} key={item.id} />
+        {props.items.map((item: Item) => (
+          <CurrentItem item={item} key={item.id} onDelete={props.onDelete}/>
         ))}
       </ul>
     </div>
