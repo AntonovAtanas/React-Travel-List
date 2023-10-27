@@ -1,23 +1,20 @@
-import { Item } from '../../interface/item';
-import './footer.css';
+import { Item } from "../../interface/item";
+import "./footer.css";
 
-export default function Footer ({items} : {items: Item[]}) {
-    let packedCounter = 0;
+export default function Footer({ items }: { items: Item[] }) {
+  let packedCounter = items.filter((item) => item.packed).length;
+  let percentage = (packedCounter / items.length) * 100;
 
-    function packedCalc(items: Item[]) {
-
-
-        items.forEach((element: Item) => {
-            if (element.packed === true) {
-                packedCounter += 1;
-            } 
-        });
-        return packedCounter;
-    }
-
-    return (
-        <footer className="stats">
-             <p>💼 You have {items.length} items on your list, and you already packed {packedCalc(items)} ({((packedCounter / items.length) * 100).toFixed(2)}%)</p>
-        </footer>
-    )
+  return (
+    <footer className="stats">
+      {packedCounter === items.length && items.length > 0 ? (
+        <p>You got everything! Ready to go ✈</p>
+      ) : (
+        <p>
+          💼 You have {items.length} items on your list, and you already packed{" "}
+          {packedCounter} ({percentage ? percentage.toFixed(2) : 0}%)
+        </p>
+      )}
+    </footer>
+  );
 }
