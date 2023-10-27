@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./item.css";
+import { Item } from "../../interface/item";
+import { OnDelete } from "../../interface/functions";
 
-export default function CurrentItem(props: any) {
-  const [checked, useChecked] = useState(props.item.packed);
+export default function CurrentItem({item, onDelete}: {item: Item, onDelete: OnDelete}) {
+  const [checked, useChecked] = useState(item.packed);
 
-  function onChecked() {
+  function onChecked(): void {
     useChecked((s: boolean) => !s);
   }
 
@@ -12,9 +14,9 @@ export default function CurrentItem(props: any) {
     <li>
       <input type="checkbox" onClick={onChecked}></input>
       <p style={{ textDecoration: checked ? "line-through" : "none" }}>
-        {props.item.quantity} {props.item.name}
+        {item.quantity} {item.name}
       </p>
-      <button onClick={() => props.onDelete(props.item.id)}>❌</button>
+      <button onClick={() => onDelete(item.id)}>❌</button>
     </li>
   );
 }

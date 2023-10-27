@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./form.css";
-import { Item } from "../../interface/item";
+import { OnNewItem } from "../../interface/functions";
 
-export default function Form({ onNewItem }: { onNewItem: (newItem: Item) => void }) {
+export default function Form({ onNewItem }: { onNewItem: OnNewItem}) {
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState(1);
 
