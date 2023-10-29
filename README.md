@@ -1,27 +1,15 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An app which allows the user to add items to his travel list. He can pack them, sort them by name or packed status, and clears them.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/AntonovAtanas/React-Travel-List/assets/114076833/82fb1ade-0ee8-4007-a79e-63b8e9137744)
 
-## Expanding the ESLint configuration
+![image](https://github.com/AntonovAtanas/React-Travel-List/assets/114076833/56f8c3af-8ec8-4c8a-ab4c-324001601db1)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![image](https://github.com/AntonovAtanas/React-Travel-List/assets/114076833/d5cf86f4-f1bc-47fd-8a02-7f75744f351e)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
