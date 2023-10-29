@@ -32,9 +32,6 @@ function App() {
 
     function onSortResults(sortCriteria: string) {
         switch (sortCriteria) {
-            case "input":
-                setItems((items) => [...items]);
-                break;
             case "alphabetical":
                 setItems((allItems) =>
                     [...allItems].sort((a, b) => a.name.localeCompare(b.name))
@@ -50,6 +47,10 @@ function App() {
         }
     }
 
+    function onClearList(): void {
+        setItems(() => []);
+    }
+
     return (
         <div className="app">
             <Header />
@@ -59,6 +60,7 @@ function App() {
                 onDelete={onDelete}
                 onChecked={onChecked}
                 onSortResults={onSortResults}
+                onClearList={onClearList}
             />
             <Footer items={items} />
         </div>

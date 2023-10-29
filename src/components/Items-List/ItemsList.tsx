@@ -1,5 +1,5 @@
 import { Item } from "../../interface/item";
-import { OnChecked, OnDelete, OnSortResults } from "../../interface/functions";
+import { OnChecked, OnClearList, OnDelete, OnSortResults } from "../../interface/functions";
 import CurrentItem from "../Item/Item";
 import "./itemsList.css";
 
@@ -7,12 +7,14 @@ export default function ItemsList({
   items,
   onDelete,
   onChecked,
-  onSortResults
+  onSortResults,
+  onClearList
 }: {
   items: Item[];
   onDelete: OnDelete;
   onChecked: OnChecked;
-  onSortResults: OnSortResults
+  onSortResults: OnSortResults;
+  onClearList: OnClearList
 }) {
 
   return (
@@ -30,14 +32,12 @@ export default function ItemsList({
         </ul>
       </div>
       <div className="actions">
-        <select onChange={(e) => onSortResults(e.target.value)}>
-          <option value="input">Sort by input order</option>
+        <select defaultValue='' onChange={(e) => onSortResults(e.target.value)}>
+          <option disabled value="" hidden> Sort items...</option>
           <option value="alphabetical">Sort by name</option>
           <option value="packed">Sorted by packed status</option>
         </select>
-        {/* <button></button>
-        
-        */}
+        <button onClick={onClearList}>Clear List</button>
       </div>
     </>
   );
